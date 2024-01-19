@@ -2,4 +2,4 @@
 	<title>Index</title>
 </svelte:head>
 
-<h1>Examples</h1>
+<h1>Example stuff</h1>
