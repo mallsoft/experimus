@@ -8,7 +8,7 @@
 
 <h1>Get 10 first headings from nrk</h1>
 
-<ul>
+<ul class="box">
 	{#each data.headings as { text, href }}
 		<li>
 			<a {href}>{text}</a>
@@ -29,6 +29,6 @@
 		padding: 0.5rem;
 	}
 	li + li {
-		border-top: 1rex solid darkgray;
+		border-top: 0.1rem solid darkgray;
 	}
 </style>

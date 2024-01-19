@@ -4,11 +4,12 @@
 
 	const routes = [
 		{ name: 'main', href: '/' },
-		{ name: 'nrk', href: '/nrk' }
+		{ name: 'nrk', href: '/nrk' },
+		{ name: 'chart', href: '/chart' }
 	];
 </script>
 
-<nav>
+<nav class="box">
 	{#if $navigating}
 		{@const to = routes.find((x) => x.href === $navigating?.to?.url.pathname)}
 		Navigating to... {to?.name}
@@ -28,12 +29,7 @@
 		display: flex;
 		flex-wrap: wrap;
 		gap: 1rem;
-
-		padding: 1rem;
 		margin: 0.5rem;
-		border-radius: 0.5rem;
-		background-color: white;
-		box-shadow: 1px 2px 10px -4px rgba(0, 0, 0, 0.5);
 	}
 
 	a {
