@@ -1,20 +1,18 @@
 <script>
-	import Chart from './_components/Chart.svelte';
+	import { onMount } from 'svelte';
+	import { options } from './opts';
+
+	/** @type {HTMLElement}*/
+	let div;
+	/** @type {any}*/
+	let apex;
+
+	onMount(async () => {
+		const ApexCharts = (await import('apexcharts')).default;
+
+		apex = new ApexCharts(div, options);
+		apex.render();
+	});
 </script>
 
-<Chart
-	options={{
-		chart: {
-			type: 'bar'
-		},
-		series: [
-			{
-				name: 'sales',
-				data: [30, 40, 35, 50, 49, 60, 70, 91, 125]
-			}
-		],
-		xaxis: {
-			categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999]
-		}
-	}}
-/>
+<div bind:this={div} />

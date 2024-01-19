@@ -17,11 +17,8 @@ export async function load({ setHeaders }) {
 	const isOld = Date.now() - cacheAge > 5 * MINUTE;
 
 	if (!isOld) {
-		console.log('Old news');
 		return { headings: tinyCache };
 	}
-
-	console.log('New news');
 
 	const res = await fetch('https://www.nrk.no/');
 	if (!res.ok) error(res.status, res.statusText);
